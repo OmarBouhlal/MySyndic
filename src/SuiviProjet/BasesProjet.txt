@@ -1,0 +1,21 @@
+Un seul Syndic , plusieurs immeubles  , chaque immeuble => n appt  ; 
+
+Logique register : 
+
+
+User :  firstname , lastname
+champ de Immeubles : fetch Immeubles disponibles dans Table Immeubles 
+champ de Appts : fetch app dispo dans Immeuble choisi
+email , password
+
+il faut implémenter une class User qui va avoir comme attributs tout ce qui est comme champ dans register
+Pour que chaque fois que User soit register , un objet User lui est associé soit crée
+  
+
+
+
+Pour Admin , il faut  : navBar => fACTURES , residents
+factures aie options voir paid Factures , and unpaid Factures
+Pour User , il faut : navBar => factures , details
+factures affiches les factures disponibles
+option payer factures
