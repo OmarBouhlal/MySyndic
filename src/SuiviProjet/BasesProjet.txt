@@ -14,8 +14,15 @@ Pour que chaque fois que User soit register , un objet User lui est associé soi
 
 
 
-Pour Admin , il faut  : navBar => fACTURES , residents
-factures aie options voir paid Factures , and unpaid Factures
-Pour User , il faut : navBar => factures , details
-factures affiches les factures disponibles
+Pour Admin , il faut  : navBar => Factures , Residents
+factures with  options  :
+ see paid Factures , and unpaid Factures
+Pour User , il faut : navBar => Factures , Details
+Factures affiche les factures disponibles
 option payer factures
+Details de user : nom , Immeuble , appartement
+
+Pour ce qui est du Dashboard , il faut un conditional rendering , if Admin connected :
+Dashboard  = AdminNavBar.jsx  + LayoutAdminDashboard.jsx
+else (USER is the one connected)  :
+Dashboard  = UserNavBar.jsx  + LayoutUserDashboard.jsx

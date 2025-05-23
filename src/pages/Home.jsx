@@ -115,12 +115,9 @@ export default function Home(){
                 </div>
 
                 <footer>
-                    <p>
-                        Created with <i className="fa fa-heart"></i> by
-                        <a target="_blank" rel="noreferrer" href="https://florin-pop.com">Florin Pop</a>
-                        - Read how I created this and how you can join the challenge
-                        <a target="_blank" rel="noreferrer"
-                           href="https://www.florin-pop.com/blog/2019/03/double-slider-sign-in-up-form/">here</a>.
+                    <p>&copy; 2025 Created by a Group of 3 Software Engineering Students of ENSAM   <a href="https://github.com/ValuryTry"><img src="src/assets/task-portrait.jpg" style={{width : "25px" , height : "25px" , borderRadius :  "50%" }}/></a>
+
+
                     </p>
                 </footer>
    </>
