@@ -4,6 +4,8 @@ import Login from "./pages/Login.jsx";
 import Register from "./pages/Register.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
 import Home from "./pages/Home.jsx";
+import UserFactures from "./pages/UserFactures.jsx";
+import AdminFactures from "./pages/AdminFactures.jsx";
 function App() {
 
 
@@ -13,6 +15,8 @@ function App() {
         <Routes>
             <Route path="/" element={<Home/>}/>
             <Route path="/Dashboard" element={<Dashboard/>}/>
+            <Route path="/UserFactures" element={<UserFactures/>}/>
+            <Route path="/AdminFactures" element={<AdminFactures/>}/>
         </Routes>
     </>
   )
