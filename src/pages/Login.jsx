@@ -14,6 +14,7 @@ export default function Login(){
     }
     const login = (e) => {
         e.preventDefault();
+        console.log(1);
         const verifyAccount = accounts.find((acc)=>  acc.email === email
         && acc.password === password );
         console.log(verifyAccount);
