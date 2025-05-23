@@ -6,6 +6,7 @@ import Dashboard from "./pages/Dashboard.jsx";
 import Home from "./pages/Home.jsx";
 import UserFactures from "./pages/UserFactures.jsx";
 import AdminFactures from "./pages/AdminFactures.jsx";
+import Residents from "./pages/Residents.jsx";
 function App() {
 
 
@@ -17,6 +18,7 @@ function App() {
             <Route path="/Dashboard" element={<Dashboard/>}/>
             <Route path="/UserFactures" element={<UserFactures/>}/>
             <Route path="/AdminFactures" element={<AdminFactures/>}/>
+            <Route path="/Residents" element={<Residents/>}/>
         </Routes>
     </>
   )

@@ -14,6 +14,10 @@ body {
     font-family: 'Montserrat', sans-serif;
     height: 100vh;
     margin: -20px 0 50px;
+    overflow-y: auto;
+}
+body::-webkit-scrollbar {
+    display: none;               /* Chrome, Safari */
 }
 
 h1 {
@@ -90,11 +94,11 @@ input {
 }
 select{
 
-        background-color: #eee;
-        border: none;
-        padding: 12px 15px;
-        margin: 8px 0;
-        width: 100%;
+    background-color: #eee;
+    border: none;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 100%;
 
 }
 .container {
@@ -257,4 +261,12 @@ footer i {
 footer a {
     color: #3c97bf;
     text-decoration: none;
+}
+.Cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+    padding: 24px;
+    max-width: 1400px;
+    margin-left: 40px;
 }
