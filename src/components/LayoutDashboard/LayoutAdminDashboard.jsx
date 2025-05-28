@@ -30,20 +30,13 @@ export default function LayoutAdminDashboard() {
     const handleDeleteUser = async (userId) => {
     if (window.confirm('Do you accept deleting this user')) {
         try {
+            console.log("try to delete");
             await axios.delete(`http://localhost:3000/api/users/${userId}`);
             
-            const residentsRes = await axios.get("http://localhost:3000/api/allusers");
-            setResidentsData(residentsRes.data.data.map(user => ({
-                _id: user._id,
-                firstName: user.FirstName,
-                lastName: user.LastName,
-                immeuble: user.Immeuble,
-                appt: user.Appartement,
-                email: user.email
-            })));
+            setResidentsData(prev => prev.filter(user => user._id !== userId));
         } catch (error) {
             console.error('Error deleting user:', error);
-            alert('Failed to delete user');
+            alert(error.response?.data?.message || 'Failed to delete user');
         }
     }
 };
@@ -114,6 +107,7 @@ export default function LayoutAdminDashboard() {
                 });
 
                 setResidentsData(residentsRes.data.data.map(user => ({
+                    _id: user._id,
                     firstName: user.FirstName,
                     lastName: user.LastName,
                     immeuble: user.Immeuble,
