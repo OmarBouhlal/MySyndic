@@ -2,8 +2,8 @@
 
 # technologies used : 
 
-# Front End :  REACT
+Front End :  REACT
 
-# Back End : express
+Back End : express
 
-# Database : mongodb
+Database : mongodb
