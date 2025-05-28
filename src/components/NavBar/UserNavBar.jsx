@@ -2,6 +2,7 @@ import '../../css/NavBar.scss'
 import { CgProfile } from "react-icons/cg";
 import { MdFactCheck } from "react-icons/md";
 import { CiLogout } from "react-icons/ci";
+import { FaAddressBook } from "react-icons/fa";
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 export default function UserNavBar(){
@@ -28,6 +29,7 @@ export default function UserNavBar(){
             
         }
     };
+    
     return(<>
         <nav className="navbar">
             <ul className="navbar__menu">
@@ -42,6 +44,12 @@ export default function UserNavBar(){
                         e.preventDefault();
                         handleLogout();
                     }}><i><CiLogout size={25}/></i><span>LogOut</span></a>
+                </li>
+                 <li className="navbar__item">
+                    <a href="#" className="navbar__link" onClick={(e) => {
+                        e.preventDefault();
+                        navigate('/residents')
+                    }}><i><FaAddressBook size={25}/></i><span>LogOut</span></a>
                 </li>
             </ul>
         </nav>
