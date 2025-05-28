@@ -5,6 +5,7 @@ import image from "../assets/syd.jpg";
 import SearchBar from '../components/SearchBar.jsx';
 import { useState, useEffect } from 'react';
 import "../css/Search.css";
+import { useNavigate } from 'react-router-dom';
 
 export default function Residents() {
     const [filteredCards, setFilteredCards] = useState([]);
@@ -30,55 +31,7 @@ export default function Residents() {
                 setError(err.message);
                 
                 
-                const fallbackData = [
-                    {
-                        id: 1,
-                        title: "Aymane",
-                        image: image,
-                        Appartement: "App1",
-                        Immeuble: "Imm1"
-                    },
-                    {
-                        id: 2,
-                        title: "eddddddddddddddd",
-                        image: image,
-                        Appartement: "App1",
-                        Immeuble: "Majorant "
-                    },
-                    {
-                        id: 3,
-                        title: "Aymaneeee",
-                        image: image,
-                        Appartement: "App1",
-                        Immeuble: "Majorant"
-                    },
-                    {
-                        id: 4,
-                        title: "Aymane",
-                        image: image,
-                        Immeuble: "Majorant"
-                    },
-                    {
-                        id: 5,
-                        title: "Aymane",
-                        image: image,
-                        Immeuble: "Majoran"
-                    },
-                    {
-                        id: 6,
-                        title: "Aymane",
-                        image: image,
-                        Immeuble: "Majorant "
-                    },
-                    {
-                        id: 7,
-                        title: "Aymane",
-                        image: image,
-                        Immeuble: "Majorant "
-                    }
-                ];
-                setInitialCards(fallbackData);
-                setFilteredCards(fallbackData);
+                
             } finally {
                 setLoading(false);
             }
@@ -104,7 +57,11 @@ export default function Residents() {
 
         setFilteredCards(filtered);
     };
-
+     const navigate = useNavigate();
+    function navig() {
+       
+    navigate('/AdminFactures');
+    }
     return(
         <>
             <UserNavBar/>
@@ -120,7 +77,7 @@ export default function Residents() {
                         image={image}
                         Appartement={card.Appartement}
                         Immeuble={card.Immeuble}
-                        footer={<button>Voir Facture</button>}
+                        footer={<button onClick={navig}>Voir Facture</button>}
                     />
                 ))}
 

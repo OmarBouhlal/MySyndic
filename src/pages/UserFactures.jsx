@@ -16,11 +16,10 @@ export default function UserFactures() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                // Fetch both factures and user data in parallel
                 const [facturesResponse, userDataResponse] = await Promise.all([
-                    axios.get("http://localhost:3000/api/getFact/6831bacce3f8a27f0c336575"),
-                    axios.get("http://localhost:3000/api/geImmApp/6831bacce3f8a27f0c336575")
-                ]);
+  axios.get("http://localhost:3000/api/getFact", { withCredentials: true }),
+  axios.get("http://localhost:3000/api/geImmApp", { withCredentials: true })
+]);
 
                 setUserData({
                     Immeuble: userDataResponse.data.Immeuble || 'Unknown',

@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { FaUser, FaEnvelope, FaLock, FaBuilding, FaHome, FaEdit, FaEye, FaEyeSlash, FaCamera } from 'react-icons/fa';
 import '../css/Profile.css';
 import UserNavBar from '../components/NavBar/UserNavBar';
+import axios from 'axios';
 
 export default function Profile() {
     const { id } = useParams();
@@ -27,14 +28,13 @@ export default function Profile() {
         const fetchProfileData = async () => {
             try {
                 setLoading(true);
-                const response = await fetch(`http://localhost:3000/api/user/${id}`);
+                 const response = await axios.get('http://localhost:3000/api/user', {
+                withCredentials: true
+            });
                 
-                if (!response.ok) {
-                    const errorData = await response.json();
-                    throw new Error(errorData.message || 'Failed to fetch profile');
-                }
                 
-                const data = await response.json();
+                
+                const data = await response.data;
                 setProfileData({
                     firstName: data.firstName || data.FirstName || "",
                     lastName: data.lastName || data.LastName || "",
@@ -71,16 +71,16 @@ export default function Profile() {
 
     const handleEdit = async () => {
         try {
-            const response = await fetch(`http://localhost:3000/api/updateUser/${id}`, {
-                method: 'PATCH',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    email: formData.email,
-                    password: formData.password
-                })
-            });
+             const response = await axios.patch(
+            'http://localhost:3000/api/updateUser',
+            {
+                email: formData.email,
+                password: formData.password
+            },
+            {
+                withCredentials: true
+            }
+        );
 
             if (!response.ok) {
                 const errorData = await response.json();
