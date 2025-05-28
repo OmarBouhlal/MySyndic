@@ -5,7 +5,6 @@ import image from "../assets/syd.jpg";
 import SearchBar from '../components/SearchBar.jsx';
 import { useState, useEffect } from 'react';
 import "../css/Search.scss";
-import "../css/Search.css";
 import { useNavigate } from 'react-router-dom';
 
 export default function Residents() {

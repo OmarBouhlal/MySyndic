@@ -5,6 +5,7 @@ import { CiLogout } from "react-icons/ci";
 import { FaAddressBook } from "react-icons/fa";
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { MdSpaceDashboard } from "react-icons/md";
 export default function UserNavBar(){
     const navigate = useNavigate();
 
@@ -49,7 +50,18 @@ export default function UserNavBar(){
     >
         <i><MdFactCheck size={25}/></i><span>Factures</span>
     </a>
+    </li>
+                <li className="navbar__item">
+                    <a href="#" className="navbar__link" onClick={(e) => {
+                        e.preventDefault();
+                        navigate('/Dashboard');
+                    }}><i><MdSpaceDashboard size={25}/></i><span>Dashboard</span></a>
                 </li>
+               
+               
+               
+               
+                
                 <li className="navbar__item">
                     <a href="#" className="navbar__link" onClick={(e) => {
                         e.preventDefault();

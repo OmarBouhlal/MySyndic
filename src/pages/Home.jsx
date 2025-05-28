@@ -104,7 +104,7 @@ async function login(e) {
       const role = resp.data.role;
 
       if (role === "admin") {
-        navigate("/AdminFactures");  // Admin route
+        navigate("/Dashboard");  // Admin route
       } else {
         navigate("/UserFactures");   // Normal user route
       }
