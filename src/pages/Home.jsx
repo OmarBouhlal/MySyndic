@@ -90,24 +90,32 @@ export default function Home() {
         }
     }
 
-    async function login(e) {
-        e.preventDefault();
-        try {
-            const resp = await axios.post("http://localhost:3000/api/get", {
-                email,
-                password
-            });
+async function login(e) {
+  e.preventDefault();
+  try {
+    const resp = await axios.post("http://localhost:3000/api/get", {
+      email,
+      password
+    },{ withCredentials: true });
+   localStorage.setItem('role', resp.data.role);
+    console.log(resp.data);
 
-            console.log(resp.data);
-            if (resp.data) {
-                navigate("/UserFactures");
-            } else {
-                alert("Invalid email or password.");
-            }
-        } catch (error) {
-            console.error("Connection error:", error);
-        }
+    if (resp.data && resp.data.role !== undefined) {
+      const role = resp.data.role;
+
+      if (role === "admin") {
+        navigate("/AdminFactures");  // Admin route
+      } else {
+        navigate("/UserFactures");   // Normal user route
+      }
+    } else {
+      alert("Invalid email or password.");
     }
+  } catch (error) {
+    console.error("Connection error:", error);
+    alert("Server error. Please try again later.");
+  }
+}
 
     return (
         <>
@@ -160,9 +168,10 @@ export default function Home() {
             </div>
 
             <footer>
-                <p>&copy; 2025 Created by a Group of 3 Software Engineering Students of ENSAM
+                <p>&copy; 2025 Created by a Group of 3 Software Engineering Students of ENSAM <br></br>
+                <p><a href="https://github.com/OmarBouhlal">Omar</a> <a href="https://github.com/Aymane157">Aymane</a> <a href="https://github.com/tahaben401"> Taha</a></p>
                 </p>
-            </footer>
+            </footer>
         </>
     );
 }
