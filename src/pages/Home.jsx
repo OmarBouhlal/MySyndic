@@ -160,7 +160,8 @@ export default function Home() {
             </div>
 
             <footer>
-                <p>&copy; 2025 Created by a Group of 3 Software Engineering Students of ENSAM
+                <p>&copy; 2025 Created by a Group of 3 Software Engineering Students of ENSAM <br></br>
+                <p><a href="https://github.com/OmarBouhlal">Omar</a> <a href="https://github.com/Aymane157">Aymane</a> <a href="https://github.com/tahaben401"> Taha</a></p>
                 </p>
             </footer>
         </>
