@@ -1,4 +1,4 @@
-import '../css/Home.css';
+import '../css/Home.scss';
 import UserNavBar from "../components/NavBar/UserNavBar.jsx";
 import LayoutAdminDashboard from "../components/LayoutDashboard/LayoutAdminDashboard.jsx";
 import LayoutUserDashboard from "../components/LayoutDashboard/LayoutUserDashboard.jsx";

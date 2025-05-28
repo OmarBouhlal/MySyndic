@@ -1,10 +1,10 @@
-import '../css/Home.css';
+import '../css/Home.scss';
 import UserNavBar from "../components/NavBar/UserNavBar.jsx";
 import Card from '../components/NavBar/Card.jsx';
 import image from "../assets/syd.jpg";
 import SearchBar from '../components/SearchBar.jsx';
 import { useState, useEffect } from 'react';
-import "../css/Search.css";
+import "../css/Search.scss";
 
 export default function Residents() {
     const [filteredCards, setFilteredCards] = useState([]);

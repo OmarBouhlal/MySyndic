@@ -264,9 +264,66 @@ footer a {
 }
 .Cards {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 24px;
     padding: 24px;
     max-width: 1400px;
     margin-left: 40px;
+    
+   
+    .loading {
+        grid-column: 1 / -1;
+        text-align: center;
+        padding: 2rem;
+        font-size: 1.2rem;
+        color: #666;
+    }
+    
+   
+    .error {
+        grid-column: 1 / -1;
+        text-align: center;
+        padding: 2rem;
+        font-size: 1.2rem;
+        color: #dc3545;
+        background-color: #f8d7da;
+        border-radius: 8px;
+    }
+    
+  
+    .no-results {
+        grid-column: 1 / -1;
+        text-align: center;
+        padding: 2rem;
+        font-size: 1.2rem;
+        color: #666;
+    }
+    
+    
+    @media (max-width: 768px) {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        padding: 16px;
+        margin-left: 20px;
+        
+        .loading,
+        .error,
+        .no-results {
+            padding: 1.5rem;
+            font-size: 1.1rem;
+        }
+    }
+    
+    
+    @media (max-width: 480px) {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        padding: 12px;
+        margin-left: 10px;
+        
+        .loading,
+        .error,
+        .no-results {
+            padding: 1rem;
+            font-size: 1rem;
+        }
+    }
 }

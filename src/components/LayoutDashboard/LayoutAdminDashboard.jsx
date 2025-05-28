@@ -1,4 +1,4 @@
-import '../../css/LayoutDash.css';
+import '../../css/LayoutDash.scss';
 import { useEffect, useState, useRef } from 'react';
 import { Chart as ChartJS, defaults } from 'chart.js/auto';
 import { Bar, Pie } from 'react-chartjs-2';

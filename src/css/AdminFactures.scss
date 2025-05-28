@@ -1,0 +1,273 @@
+
+$white: #ffffff;
+$dark-blue: #2c3e50;
+$light-gray: #f8f9fa;
+$medium-gray: #495057;
+$border-gray: #e0e0e0;
+$light-border: #f0f0f0;
+$blue: #3498db;
+$dark-blue-btn: #2980b9;
+$purple: #9b59b6;
+$green: #27ae60;
+$light-green: #2ecc71;
+$orange: #f39c12;
+$red: #e74c3c;
+$hover-bg: #f8fafc;
+$action-bg: #f0f2f5;
+
+
+$status-paid-bg: #e6f7ee;
+$status-pending-bg: #fff8e6;
+$status-overdue-bg: #feecec;
+
+
+@mixin button-hover-effect {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(52, 152, 219, 0.3);
+}
+
+@mixin fade-in-animation {
+    animation: fadeIn 0.5s ease-out;
+}
+
+@mixin slide-in-animation {
+    animation: slideIn 0.3s ease-out;
+    animation-fill-mode: both;
+}
+
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(20px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+@keyframes slideIn {
+    from { 
+        opacity: 0; 
+        transform: translateX(20px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateX(0); 
+    }
+}
+
+
+.factures-container {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: $white;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    @include fade-in-animation;
+
+    
+    h1 {
+        color: $dark-blue;
+        text-align: center;
+        margin-bottom: 2rem;
+        font-weight: 600;
+        font-size: 2rem;
+        position: relative;
+
+        &::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, $blue, $purple);
+            margin: 0.5rem auto 0;
+            border-radius: 2px;
+        }
+    }
+}
+
+
+.filtres {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    background: $light-gray;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.03);
+}
+
+.filtre-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+    min-width: 200px;
+
+    label {
+        font-weight: 500;
+        color: $medium-gray;
+        font-size: 0.9rem;
+    }
+
+    select,
+    input {
+        padding: 0.75rem 1rem;
+        border: 1px solid $border-gray;
+        border-radius: 8px;
+        font-size: 0.95rem;
+        transition: all 0.3s ease;
+        background: $white;
+
+        &:focus {
+            outline: none;
+            border-color: $blue;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+        }
+    }
+}
+
+
+.btn-nouvelle {
+    background: linear-gradient(135deg, $blue, $dark-blue-btn);
+    color: $white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 6px rgba(52, 152, 219, 0.2);
+
+    &:hover {
+        @include button-hover-effect;
+    }
+}
+
+
+.table-container {
+    overflow-x: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: $white;
+}
+
+th, td {
+    padding: 1rem 1.25rem;
+    text-align: left;
+    border-bottom: 1px solid $light-border;
+}
+
+th {
+    background-color: $dark-blue;
+    color: $white;
+    font-weight: 500;
+    position: sticky;
+    top: 0;
+}
+
+tr {
+    &:not(:last-child) td {
+        border-bottom: 1px solid $light-border;
+    }
+
+    &:hover td {
+        background-color: $hover-bg;
+    }
+}
+
+
+.statut {
+    padding: 0.5rem 0.75rem;
+    border-radius: 20px;
+    font-weight: 500;
+    font-size: 0.75rem;
+    display: inline-block;
+    min-width: 80px;
+    text-align: center;
+
+    &.Payée {
+        background-color: $status-paid-bg;
+        color: $green;
+    }
+
+    &.En-attente {
+        background-color: $status-pending-bg;
+        color: $orange;
+    }
+
+    &.En-retard {
+        background-color: $status-overdue-bg;
+        color: $red;
+    }
+}
+
+
+.btn-action {
+    padding: 0.5rem 0.75rem;
+    margin-right: 0.5rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: all 0.2s ease;
+    background-color: $action-bg;
+    color: $dark-blue;
+
+    &:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    &.payer {
+        background: linear-gradient(135deg, $light-green, $green);
+        color: $white;
+    }
+}
+
+
+tbody tr {
+    @include slide-in-animation;
+
+    @for $i from 1 through 3 {
+        &:nth-child(#{$i}) {
+            animation-delay: #{$i * 0.1}s;
+        }
+    }
+}
+
+
+@media (max-width: 768px) {
+    .filtres {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .filtre-group {
+        width: 100%;
+    }
+
+    th, td {
+        padding: 0.75rem;
+        font-size: 0.85rem;
+    }
+
+    .btn-action {
+        margin-bottom: 0.5rem;
+    }
+}

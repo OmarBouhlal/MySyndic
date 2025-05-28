@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import '../css/UserFactures.css';
+import '../css/UserFactures.scss';
 import UserNavBar from "../components/NavBar/UserNavBar.jsx";
 import axios from 'axios';
 import { PDFDownloadLink } from '@react-pdf/renderer';

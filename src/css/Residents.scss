@@ -20,31 +20,31 @@
     display: flex;
     align-items: center;
     gap: 10px;
-}
 
-.immeuble-filter label {
-    font-weight: 600;
-    color: #495057;
-}
+    label {
+        font-weight: 600;
+        color: #495057;
+    }
 
-.immeuble-filter select {
-    padding: 8px 12px;
-    border-radius: 6px;
-    border: 1px solid #ced4da;
-    background-color: white;
-    font-size: 14px;
-    cursor: pointer;
-    transition: border-color 0.3s;
-}
+    select {
+        padding: 8px 12px;
+        border-radius: 6px;
+        border: 1px solid #ced4da;
+        background-color: white;
+        font-size: 14px;
+        cursor: pointer;
+        transition: border-color 0.3s;
 
-.immeuble-filter select:hover {
-    border-color: #adb5bd;
-}
+        &:hover {
+            border-color: #adb5bd;
+        }
 
-.immeuble-filter select:focus {
-    outline: none;
-    border-color: #4dabf7;
-    box-shadow: 0 0 0 2px rgba(77, 171, 247, 0.3);
+        &:focus {
+            outline: none;
+            border-color: #4dabf7;
+            box-shadow: 0 0 0 2px rgba(77, 171, 247, 0.3);
+        }
+    }
 }
 
 .cards-grid {
@@ -61,12 +61,12 @@
     background-color: #f8f9fa;
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
 
-.no-results p {
-    font-size: 18px;
-    color: #495057;
-    margin-bottom: 20px;
+    p {
+        font-size: 18px;
+        color: #495057;
+        margin-bottom: 20px;
+    }
 }
 
 .view-button {
@@ -78,10 +78,10 @@
     cursor: pointer;
     transition: background-color 0.3s;
     font-size: 14px;
-}
 
-.view-button:hover {
-    background-color: #339af0;
+    &:hover {
+        background-color: #339af0;
+    }
 }
 
 .reset-filters {
@@ -92,13 +92,13 @@
     border-radius: 6px;
     cursor: pointer;
     transition: background-color 0.3s;
+
+    &:hover {
+        background-color: #343a40;
+    }
 }
 
-.reset-filters:hover {
-    background-color: #343a40;
-}
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
     .filters-container {
         flex-direction: column;

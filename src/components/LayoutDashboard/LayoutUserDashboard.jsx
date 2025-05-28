@@ -1,4 +1,4 @@
-import '../../css/LayoutDash.css'
+import '../../css/LayoutDash.scss'
 import {useEffect} from "react";
 
 

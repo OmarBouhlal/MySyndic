@@ -1,0 +1,105 @@
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th, td {
+    border-color: blue;
+}
+
+tr:nth-child(even) {
+    background-color: #D6EEEE;
+}
+
+
+$table-prefixes: "Residents_table", "Factures_table", "PaidFactures", "OnGoingFactures";
+
+.#{$table-prefixes} {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+    cursor: move;
+}
+
+
+.#{$table-prefixes} thead tr {
+    background-color: #009879;
+    color: white;
+    text-align: left;
+    font-weight: bold;
+}
+
+
+.#{$table-prefixes} th, .#{$table-prefixes} td {
+    padding: 12px 15px;
+}
+
+
+.#{$table-prefixes} tbody tr {
+    border-bottom: 1px solid lightgray;
+}
+
+.#{$table-prefixes} tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.#{$table-prefixes} tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+
+.Residents_table {
+    top: 5px;
+    right: 70px;
+}
+
+.Factures_table {
+    right: 70px;
+    bottom: 20px;
+}
+
+.PaidFactures {
+    top: 80px;
+    right: 100px;
+}
+
+
+
+
+.BarResidents {
+    cursor: move;
+    top: 5px;
+    left: 120px;
+}
+
+.doughnutImmeubleFactures {
+    cursor: move;
+    bottom: 15px;
+    left: 170px;
+}
+
+
+.OnGoingFacturesContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 80px;
+    left: 150px;
+
+    .PaymentFacturesButtonsContainer {
+        margin-bottom: 5px;
+        display: flex;
+        gap: 10px;
+
+        .PaymentFacturesFactures {
+            background-color: green;
+            border-color: lightgreen;
+        }
+    }
+}
