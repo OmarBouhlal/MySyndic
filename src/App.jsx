@@ -7,6 +7,7 @@ import Home from "./pages/Home.jsx";
 import UserFactures from "./pages/UserFactures.jsx";
 import AdminFactures from "./pages/AdminFactures.jsx";
 import Residents from "./pages/Residents.jsx";
+import Profile from './pages/profile.jsx';
 function App() {
 
 
@@ -19,6 +20,7 @@ function App() {
             <Route path="/UserFactures" element={<UserFactures/>}/>
             <Route path="/AdminFactures" element={<AdminFactures/>}/>
             <Route path="/Residents" element={<Residents/>}/>
+            <Route path='/Profile/:id' element={<Profile/>}/>
         </Routes>
     </>
   )
