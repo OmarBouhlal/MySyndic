@@ -32,7 +32,7 @@ export default function LayoutAdminDashboard() {
         try {
             await axios.delete(`http://localhost:3000/api/users/${userId}`);
             
-            const residentsRes = await axios.get("http://localhost:3000/api/residents");
+            const residentsRes = await axios.get("http://localhost:3000/api/allusers");
             setResidentsData(residentsRes.data.data.map(user => ({
                 _id: user._id,
                 firstName: user.FirstName,
@@ -104,7 +104,7 @@ export default function LayoutAdminDashboard() {
             try {
                 const [immeublesRes, residentsRes, facturesRes] = await Promise.all([
                     axios.get("http://localhost:3000/api/getIMS"),
-                    axios.get("http://localhost:3000/api/residents"),
+                    axios.get("http://localhost:3000/api/allusers"),
                     axios.get("http://localhost:3000/api/getAllFact")
                 ]);
 
