@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import {ToastContainer,toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import axios from "axios";
 
 export default function Home() {
@@ -34,6 +36,17 @@ export default function Home() {
         ["ImA2"]: ["App1", "App6"]
     };
 
+    const signUpButton = document.getElementById('signUp');
+    const signInButton = document.getElementById('signIn');
+    const container = document.getElementById('container');
+
+    const handleSignUp = () => container?.classList.add("right-panel-active");
+    const handleSignIn = () => container?.classList.remove("right-panel-active");
+
+    signUpButton?.addEventListener('click', handleSignUp);
+    signInButton?.addEventListener('click', handleSignIn);
+
+
     const [ImmChoice, setImm] = useState(Immeubles[0]);
     const [AppChoice, setApp] = useState(ImmxApp[Immeubles[0]][0]);
 
@@ -49,6 +62,29 @@ export default function Home() {
                 password,
             });
             console.log(resp.data);
+             toast.success("Account created successfully!", {
+  position: "top-right",
+  autoClose: 1000, // First toast shows for 1 second
+  hideProgressBar: false,
+  closeOnClick: true,
+  pauseOnHover: true,
+  draggable: true,
+  onClose: () => { // This triggers when the first toast naturally closes
+    setTimeout(() => {
+      toast.info("Please verify your account, check spam if not found!", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true
+      });
+    }, 500); // 500ms delay after first toast closes
+  }
+});
+            
+            handleSignIn();
+           
         } catch (error) {
             console.error("Registration failed: ", error);
         }
@@ -75,6 +111,7 @@ export default function Home() {
 
     return (
         <>
+            <ToastContainer/>       
             <div className="container" id="container">
                 <div className="form-container sign-up-container">
                     <form onSubmit={register}>
@@ -124,9 +161,6 @@ export default function Home() {
 
             <footer>
                 <p>&copy; 2025 Created by a Group of 3 Software Engineering Students of ENSAM
-                    <a href="https://github.com/ValuryTry">
-                        <img src="src/assets/task-portrait.jpg" style={{ width: "25px", height: "25px", borderRadius: "50%" }} />
-                    </a>
                 </p>
             </footer>
         </>
